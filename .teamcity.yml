@@ -8,7 +8,7 @@ jobs:
         docker-image: node:lts
     runs-on: Linux-Medium
   Job2:
-    name: Job 2
+    name: Run Tests and Generate Reports
     runs-on: Linux-Medium
     steps:
       - type: node-js
