@@ -21,6 +21,12 @@ cd "your folder directory"
 npm install
 
 3. To run all the tests:
+3.1 Change the runner.sh permission with the following command if you encount the permission issue. If you do not have permission issue, then you can ingore this step
+
+chmod +x runner.sh
+
+3.2 run the runner.sh with the following command
+
 ./runner.sh
 
 4. To run a specific test case, you can use the --grep option:
