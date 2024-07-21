@@ -2,11 +2,12 @@ name: CBATest
 jobs:
   Job1:
     name: Install Dependencies
-    steps:
-      - type: node-js
-        shell-script: npm install
-        docker-image: node:lts
+    steps: []
     runs-on: Linux-Medium
+    files-publication:
+      - ''
+    integrations:
+      - NPM
   Job2:
     name: Run Tests and Generate Reports
     runs-on: Linux-Medium
