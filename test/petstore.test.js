@@ -108,4 +108,17 @@ describe('Create Pet API Tests', function() {
         await utils.deletePetAndValidate(baseURL, apiKey, pet.id, pets);
         console.log('Test completed: should delete an existing pet (DELETE)');
     });
+
+    it('should return 404 for pet not found with GET Method', async function() {
+        console.log('Running test: should return 400 for Pet not found with GET request');
+        await utils.petNotFoundWithGetCall(baseURL, apiKey);
+        console.log('Test completed: should return 404 for Pet not found with GET request');
+    });
+
+    it('should return 404 error for invalid input with form data using POST call', async function() {
+        console.log('Running test: should return 405 error for invalid input (POST)');
+        await utils.invalidInputTestWithPostFormData(baseURL, apiKey);
+        console.log('Test completed: should return 405 error for invalid input (POST)');
+    });
+
 });
