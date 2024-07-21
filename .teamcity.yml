@@ -1,0 +1,7 @@
+name: CBATest
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+    runs-on: Linux-Medium
