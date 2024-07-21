@@ -11,31 +11,38 @@ This repository contains automated tests for the PetStore API using Mocha and Ch
 
 1. Clone the repository:
 
-Please run the command under git bash
+## Please note: Run the command under git bash
 
 git clone git@github.com:kevinxp919/CBATest.git
 
 cd "your folder directory"
 
 2. Install the dependencies:
-npm install
+
+- npm install
 
 3. To run all the tests:
-3.1 Change the runner.sh permission with the following command if you encount the permission issue. If you do not have permission issue, then you can ingore this step
 
+
+- 3.1 Change the runner.sh permission with the following command if you encount the permission issue. If you do not have permission issue, then you can ingore this step
+## Please note: Run the command under git bash
 chmod +x runner.sh
 
-3.2 run the runner.sh with the following command
+- 3.2 run the runner.sh with the following command
 
+## Please note: Run the command under git bash
 ./runner.sh
 
 4. To run a specific test case, you can use the --grep option:
- 
-./runner.sh --grep 'test case description'
-For example: ./runner.sh --grep 'should create a new pet with Post Method and validate the pet details'
+
+## Please note: Run the command under git bash 
+- ./runner.sh --grep 'test case description'
+
+- For example: ./runner.sh --grep 'should create a new pet with Post Method and validate the pet details'
 
 5. Report
-The report will be generated in the 'customer_reports'. In order to open the report, please double click 'custom_report.html' and it will bring up at your default browser
+
+- The report will be generated in the 'customer_reports'. In order to open the report, please double click 'custom_report.html' and it will bring up at your default browser
 
 6. Project Structure
 
