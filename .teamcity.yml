@@ -4,7 +4,7 @@ jobs:
     name: Install Dependencies
     steps:
       - type: node-js
-        shell-script: npm ci
+        shell-script: npm install
         docker-image: node:lts
     runs-on: Linux-Medium
   Job2:
