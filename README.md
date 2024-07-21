@@ -6,13 +6,16 @@ This repository contains automated tests for the PetStore API using Mocha and Ch
 
 - Node.js (version 12 or later)
 - npm (version 6 or later)
-
+ 
 ## Installation
 
 1. Clone the repository:
 
+Please run the command under git bash
+
 git clone git@github.com:kevinxp919/CBATest.git
-cd <your-repository-directory>
+
+cd "your folder directory"
 
 2. Install the dependencies:
 npm install
