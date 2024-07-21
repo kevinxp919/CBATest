@@ -1,0 +1,9 @@
+name: CBATest
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: node-js
+        shell-script: npm ci
+        docker-image: node:lts
+    runs-on: Linux-Medium
