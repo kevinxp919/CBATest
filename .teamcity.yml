@@ -1,0 +1,16 @@
+name: CBATest
+jobs:
+  Job1:
+    name: Job 1
+    steps:
+      - type: script
+        script-content: npm install
+        docker-image: node:lts
+      - type: script
+        script-content: chmod +x runner.sh && ./runner.sh
+        docker-image: node:lts
+    runs-on: Linux-Medium
+    integrations:
+      - NPM
+    files-publication:
+      - ''
