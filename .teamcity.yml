@@ -2,7 +2,10 @@ name: CBATest
 jobs:
   Job1:
     name: Install Dependencies
-    steps: []
+    steps:
+      - type: script
+        script-content: npm install
+        working-directory: ''
     runs-on: Linux-Medium
     files-publication:
       - ''
