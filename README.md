@@ -102,7 +102,7 @@ Please note I have tried to implement the negative testing at the following APIs
 
 - (Get) /pet/aaaaa which should return 400 invalid ID supplied, however it returned 404 error with message 'java.lang.NumberFormatException: For input string: \"aaaccccc\"'
 
-1o. TeamCity CI Integration
+10. TeamCity CI Integration
 User Name: kevincbatest
 password:  "Please info me via Email: kevinxp919@gmail.com if you want to log in, I will provide you the password this CI pipeline will be expired within 14 days"
 ![alt text](image.png)
