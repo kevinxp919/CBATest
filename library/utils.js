@@ -252,6 +252,53 @@ async function uploadPetImage(baseURL, apiKey, petId, imagePath) {
     expect(response.data.message).to.include('additionalMetadata: Dog Pic');
 
 }
+
+ /**
+ * Tests the behavior of the API when a GET request is made with an invalid pet ID.
+ *
+ * @param {string} baseURL - The base URL of the API.
+ * @param {string} apiKey - The API key.
+ * @returns {Promise<void>} - A promise that resolves when the test is complete.
+ * @throws {Error} - If the API response status is not 404 or the response message is not "Pet not found".
+ */
+
+async function petNotFoundWithGetCall(baseURL, apiKey) {
+    const uri = `${baseURL}/pet/547563`;
+    try {
+        await getRequest(uri, apiKey);
+    } catch (error) {
+        expect(error.response.status).to.equal(404);
+        expect(error.response.data.message).to.equal("Pet not found");
+    }
+}
+
+/**
+ * Tests the behavior of the API when a POST request is made with invalid form data.
+ *
+ * @param {string} baseURL - The base URL of the API.
+ * @param {string} apiKey - The API key.
+ * @returns {Promise<void>} - A promise that resolves when the test is complete.
+ * @throws {Error} - If the API response status is not 404 or the response message does not contain "java.lang.NumberFormatException: For".
+ */
+
+async function invalidInputTestWithPostFormData(baseURL, apiKey) {
+    const petId = "aaaa";  // Non-integer value
+    const name = "InvalidPet";
+    const status = "invalidStatus";
+
+    const uri = `${baseURL}/pet/${petId}`;
+    const formData = new URLSearchParams();
+    formData.append('name', name);
+    formData.append('status', status);
+
+    try {
+        await postFormRequest(uri, formData, apiKey);
+    } catch (error) {
+        expect(error.response.status).to.equal(404);
+        expect(error.response.data.message).to.include("java.lang.NumberFormatException: For");
+    }
+}
+
 module.exports = { 
     generateRandomId,
     generateRandomName,
@@ -262,5 +309,7 @@ module.exports = {
     generateUpdatedPetData,
     updatePetWithFormData,
     deletePetAndValidate,
-    uploadPetImage
+    uploadPetImage,
+    petNotFoundWithGetCall,
+    invalidInputTestWithPostFormData
 };
