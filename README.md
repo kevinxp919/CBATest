@@ -81,3 +81,14 @@ BASE_URL: The base URL for the PetStore API.
 API_KEY: The API key for authentication.
 You can set these variables in your environment or in the runner.sh script.
 
+9. Issues
+
+Please note I have tried to implement the negative testing at the following APIs with call methods but the API still can return reponses code of 200. Not sure it is API endponint issue or not
+
+- (Post) /pet/{petId} with String value, it returned code of 404 which I expect to see 405
+- (Post) /pet with json object as {"name": abc}, it still returned code of 200 which I expect to see 405
+- (Put) /pet with invalid id - '13333333333333333', it still return code of 200 which I expect to see 400
+
+- (Put) /pet with the ID has been deleted - '809275', it still return code of 200 which I expect to see 404
+
+- (Get) /pet/aaaaa which should return 400 invalid ID supplied, however it returned 404 error with message 'java.lang.NumberFormatException: For input string: \"aaaccccc\"'
